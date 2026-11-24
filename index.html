@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#244735">
+<meta name="description" content="NOOR — teman Islamik: waktu solat, doa & zikir, Quran, tasbih dan penjejak amalan.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="NOOR">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>NOOR — Islamic Companion</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand"><span class="brandmark" aria-hidden="true">☾</span> NOOR</div>
+    <div class="date" id="today"></div>
+  </header>
+
+  <main>
+    <section id="home" class="view active" aria-label="Utama">
+      <div class="hero">
+        <div class="eyebrow">Assalamualaikum</div>
+        <h1 id="greeting">Selamat datang.</h1>
+        <p>Semoga hari ini dipenuhi keberkatan dan ketenangan.</p>
+        <div class="hero-bottom">
+          <span class="pill" id="nextPill">Memuatkan…</span>
+          <span class="pill" id="hijri">Hari yang baik untuk memperbaiki diri</span>
+          <span class="pill" lang="ar">بِسْمِ اللَّهِ</span>
+        </div>
+      </div>
+      <div class="dashboard">
+        <div>
+          <div class="section-head"><h2>Waktu solat</h2><span class="subtle" id="timesNote"></span></div>
+          <div class="prayer-grid" id="prayers"></div>
+          <div class="section-head"><h2>Amalan hari ini</h2><span class="subtle" id="doneText">0 / 5 selesai</span></div>
+          <div class="card">
+            <div class="progress-wrap">
+              <div class="ring" id="ring"><b id="percent">0%</b></div>
+              <div><b>Teruskan istiqamah</b><div class="subtle" id="streakText">Setiap langkah kecil itu bermakna.</div></div>
+            </div>
+            <div id="prayerChecks"></div>
+          </div>
+        </div>
+        <div>
+          <div class="section-head"><h2>Akses pantas</h2></div>
+          <div class="quick">
+            <a href="#duas"><i>🤲</i>Doa</a><a href="#tasbih"><i>📿</i>Tasbih</a><a href="#quran"><i>📖</i>Quran</a><a href="#habits"><i>🌿</i>Amalan</a>
+          </div>
+          <div class="section-head"><h2>Peringatan hari ini</h2></div>
+          <div class="card" id="reflection"></div>
+          <div class="section-head"><h2>Kiblat</h2></div>
+          <div class="card" id="qiblaCard"></div>
+        </div>
+        <div class="wide">
+          <div class="section-head"><h2>Rutin pilihan</h2><span class="subtle">Mulakan dengan satu amalan</span></div>
+          <div class="grid">
+            <div class="card"><b>🌅 Zikir pagi</b><p class="subtle">Mulakan hari dengan mengingati Allah.</p><a class="btn light" href="#duas/Pagi">Buka zikir</a></div>
+            <div class="card"><b>🌇 Zikir petang</b><p class="subtle">Tutup hari dengan perlindungan dan istighfar.</p><a class="btn light" href="#duas/Petang">Buka zikir</a></div>
+            <div class="card"><b>🌙 Sebelum tidur</b><p class="subtle">Akhiri hari dengan doa dan zikir.</p><a class="btn light" href="#duas/Tidur">Buka rutin</a></div>
+            <div class="card"><b>🕌 Selepas solat</b><p class="subtle">Zikir ringkas selepas solat fardu.</p><a class="btn light" href="#duas/Solat">Buka zikir</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="duas" class="view" aria-label="Doa dan zikir">
+      <div class="section-head"><h2>Doa & zikir</h2><span class="subtle">Koleksi asas</span></div>
+      <input class="search" id="duaSearch" placeholder="Cari doa atau situasi…" aria-label="Cari doa" autocomplete="off">
+      <div class="tabs" id="duaTabs"></div>
+      <div id="duaList"></div>
+      <p class="small">Nota: semak teks, transliterasi dan rujukan dengan sumber berautoriti sebelum bergantung padanya.</p>
+    </section>
+
+    <section id="quran" class="view" aria-label="Quran"></section>
+    <section id="tasbih" class="view" aria-label="Tasbih"></section>
+    <section id="habits" class="view" aria-label="Amalan"></section>
+    <section id="profile" class="view" aria-label="Profil"></section>
+  </main>
+  <div class="footer">NOOR · Semoga setiap hari mendekatkan kita kepada kebaikan.</div>
+</div>
+
+<nav class="nav" aria-label="Navigasi utama">
+  <a href="#home" data-view="home"><strong>⌂</strong>Utama</a>
+  <a href="#duas" data-view="duas"><strong>🤲</strong>Doa</a>
+  <a href="#quran" data-view="quran"><strong>▤</strong>Quran</a>
+  <a href="#tasbih" data-view="tasbih"><strong>📿</strong>Tasbih</a>
+  <a href="#habits" data-view="habits"><strong>✓</strong>Amalan</a>
+  <a href="#profile" data-view="profile"><strong>⚙</strong>Profil</a>
+</nav>
+<noscript><p style="padding:20px">NOOR memerlukan JavaScript.</p></noscript>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
